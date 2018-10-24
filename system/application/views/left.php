@@ -19,24 +19,18 @@
 <div id="container">
 
     <div id="top_shadow"></div>
-
     <div id="header">
         <div id="header_left">
             <div id="logo"><h1><a href="#">Пром. отдел</a></h1></div>
         </div>
         <div id="header_right"></div>
     </div>
-
-
     <div id="nav">
-
         <div class="nav_left"></div>
         <div class="nav_right"></div>
-
     </div>
     <div id="nav_m">
         <ul>
-
             <li><?php echo anchor("billing", "выбор фирмы"); ?></li>
             <li><?php echo anchor("billing/firm_not_closed", "Неотчитавшиеся фирмы"); ?></li>
             <li><?php echo anchor("billing/my_firm", "мои фирмы"); ?></li>
@@ -45,7 +39,6 @@
         </ul>
     </div>
     <?php
-
     function is_s($var, $poisk)
     {
         $string = '';
@@ -53,11 +46,9 @@
         $string .= " value=" . $var . " ";
         return $string;
     }
-
     ?>
 
     <div id="content_conteiner">
-
         <div id="left_column">
             <div class="menu_item">
                 <div class="menu_item_header"><h2>поиск</h2></div>
@@ -115,7 +106,6 @@
             <br>
             <div style="clear:both">
             </div>
-
         </div>
 
         <div id="right_column">
