@@ -2974,10 +2974,9 @@ class Billing extends Controller
     {
         header('Content-Type: text/html; charset="utf-8"');
 
+
         $this->db->order_by("dog");
         $nach = $this->db->get("industry.perenos_rekvizit");
-        $russian_letters = array("А", "О", "Е", "С", "Х", "Р", "Т", "Н", "К", "В", "М");
-        $english_letters = array("A", "O", "E", "C", "X", "P", "T", "H", "K", "B", "M");
         set_time_limit(0);
         $db = dbase_open("c:/oplata/rekv.dbf", 2);
 
@@ -2988,13 +2987,11 @@ class Billing extends Controller
             dbase_pack($db);
             dbase_close($db);
 
+            $russian_letters = array("А", "О", "Е", "С", "Х", "Р", "Т", "Н", "К", "В", "М");
+            $english_letters = array("A", "O", "E", "C", "X", "P", "T", "H", "K", "B", "M");
             $incorrected_bins = array();
-            $empty_bins = array();
             $ei_mfo = array();
-
             $i = 0;
-            $j = 0;
-            $ii = 0;
             $e = 0;
 
             $db2 = dbase_open("c:/oplata/rekv.dbf", 2);
