@@ -28,7 +28,7 @@ class Billing extends Controller
 
     function execute($function)
     {
-        if ($this->has_permission("billing/".$function) == 1) {
+        if ($this->has_permission("billing/" . $function) == 1) {
             eval('$this->' . $function . '();');
         }
 //        if ($this->session->userdata('billing/' . $function) == 't') {
@@ -2902,8 +2902,14 @@ class Billing extends Controller
 
     function pre_perehod()
     {
+        $last_ua = $this->db->get("industry.last_user_actions")->result();
+        $last_user_actions = array();
+        foreach ($last_ua as $lua) {
+            $last_user_actions[$lua->class_method] = $lua->max_action_time;
+        }
+        $data['last_user_actions'] = $last_user_actions;
         $this->left();
-        $this->load->view('pre_perehod');
+        $this->load->view('pre_perehod', $data);
         $this->load->view('right');
     }
 
