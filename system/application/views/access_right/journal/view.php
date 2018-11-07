@@ -17,11 +17,7 @@
     <?php foreach ($actions as $action): ?>
         <?php
         $timestamp = explode(" ", $action->action_time);
-        $timestamp = $timestamp[1];
-        $timestamp = explode("+", $timestamp);
-        $time = $timestamp[0];
-        $gmt = $timestamp[1];
-        $time = date('H:i:s', strtotime("+{$gmt} hours", strtotime($time)));
+        $time = $timestamp[1];
         $hour = explode(":", $time);
         $hour = $hour[0];
         ?>

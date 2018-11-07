@@ -85,6 +85,8 @@ class Billing extends Controller
             }
         }
 
+        date_default_timezone_set('Asia/Almaty');
+
         $action = array(
             "user_id" => $user_id,
             "class_method" => $class_method,
@@ -5383,8 +5385,8 @@ where firm_id={$this->uri->segment(3)} and data_finish is null";
             exit("Выберите дату!");
         }
 
-        $action_time_start = $action_time . " 00:00:00+6";
-        $action_time_end = $action_time . " 23:59:59+6";
+        $action_time_start = $action_time . " 00:00:00";
+        $action_time_end = $action_time . " 23:59:59";
 
         $this->db->where("user_id", $user_id);
         $this->db->where('action_time >=', $action_time_start);
